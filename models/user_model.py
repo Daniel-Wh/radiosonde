@@ -1,4 +1,5 @@
 import sqlite3
+from models.database import DataBase
 
 
 class User:
@@ -9,10 +10,10 @@ class User:
 
     @classmethod
     def find_by_username(cls, username):
-        connection = sqlite3.connect('new.db')
+        connection = sqlite3.connect(DataBase.db_path)
         cursor = connection.cursor()
 
-        query = "SELECT * FROM users WHERE username=?"
+        query = "SELECT * FROM registeredUsers WHERE username=?"
         result = cursor.execute(query, (username,))
         row = result.fetchone()
         if row:
@@ -25,10 +26,10 @@ class User:
 
     @classmethod
     def find_by_id(cls, _id):
-        connection = sqlite3.connect('new.db')
+        connection = sqlite3.connect(DataBase.db_path)
         cursor = connection.cursor()
 
-        query = "SELECT * FROM users WHERE id=?"
+        query = "SELECT * FROM registeredUsers WHERE id=?"
         result = cursor.execute(query, (_id,))
         row = result.fetchone()
         if row:
