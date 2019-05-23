@@ -1,5 +1,4 @@
 aniso8601==6.0.0
-angular
 bokeh==1.1.0
 Click==7.0
 Flask==1.0.3
