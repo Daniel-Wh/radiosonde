@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_restful import Api
 from flask_jwt import JWT, jwt_required
 from security import authenticate, identity
@@ -26,7 +26,7 @@ def create_tables():
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return render_template('index.html')
 
 
 api.add_resource(UserRegister, '/register')
