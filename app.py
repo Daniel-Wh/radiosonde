@@ -3,6 +3,7 @@ from flask_restful import Api
 from flask_jwt import JWT, jwt_required
 from security import authenticate, identity
 from resources.user_resource import UserRegister
+from models.station_model import StationData, StationModel
 from db import db
 
 uri = "postgres://keujsruvqpelne:291827d8388be8155c772e76b509b9f4ef0e9e81b2aef479644628d60aa11c9b@ec2-" \
