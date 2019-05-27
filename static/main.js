@@ -41,7 +41,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <app-header></app-header>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <app-header></app-header>\n  <app-body></app-body>\n</div>\n"
 
 /***/ }),
 
@@ -90,11 +90,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _person_person_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./person/person.component */ "./src/app/person/person.component.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
-/* harmony import */ var _nav_nav_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./nav/nav.component */ "./src/app/nav/nav.component.ts");
+/* harmony import */ var _angular_common_HTTP__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/HTTP */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _person_person_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./person/person.component */ "./src/app/person/person.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
+/* harmony import */ var _nav_nav_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./nav/nav.component */ "./src/app/nav/nav.component.ts");
+/* harmony import */ var _body_body_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./body/body.component */ "./src/app/body/body.component.ts");
+
+
 
 
 
@@ -109,20 +113,78 @@ var AppModule = /** @class */ (function () {
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                _person_person_component__WEBPACK_IMPORTED_MODULE_4__["PersonComponent"],
-                _header_header_component__WEBPACK_IMPORTED_MODULE_6__["HeaderComponent"],
-                _nav_nav_component__WEBPACK_IMPORTED_MODULE_7__["NavComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
+                _person_person_component__WEBPACK_IMPORTED_MODULE_5__["PersonComponent"],
+                _header_header_component__WEBPACK_IMPORTED_MODULE_7__["HeaderComponent"],
+                _nav_nav_component__WEBPACK_IMPORTED_MODULE_8__["NavComponent"],
+                _body_body_component__WEBPACK_IMPORTED_MODULE_9__["BodyComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"]
+                _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormsModule"],
+                _angular_common_HTTP__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"]
             ],
             providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/body/body.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/body/body.component.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2JvZHkvYm9keS5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/body/body.component.html":
+/*!******************************************!*\
+  !*** ./src/app/body/body.component.html ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<main>\n  <div class=\"intro\">\n    <h1>About</h1>\n      <p>\n          For the summer of 2019, Dr. Edwards is researching how the change in climate has impacted the height of the tropopause. With the financial assistance of Southwestern's summer Scope program, this web application was built to automate the retrieval of radiosonde data for gulf states between Texas and Florida and produce various visualizations with the parameters supplied below. Our goal is to make upper atmosphere research accessible and easy for Dr. Edwards and anyone else looking for answer in this field.\n      </p>\n  </div>\n\n  <div class=\"multi-section\">\n    <img src=\"assets/balloon.jpeg\" />\n    <div>\n      <h3>Documentation</h3>\n      <p>Radiosondes are sent from multiple locations across the gulf twice a day by NOAA. The data the radiosondes have returned has been stored by NOAA. This web application has obtained its data from the University of Wyoming through a Python package, Siphon. The data has been stored on our own database for quick access. To determine the height of the tropopause we find the lowest temperature for each balloon and the height of the balloon at that temperature. </p>\n    </div>\n  </div>\n\n  <div class=\"multi-section-two\">\n      <img class=\"a\" src=\"assets/visuals.png\" />\n      <div class=\"b\">\n        <h3>Learn More</h3>\n        <p>If you are researching the upper atmosphere and would like to have your work visualized with data outside of what is currently being stored by this wep application, please contact us. </p>\n      </div>\n  </div>\n\n  <div>\n    <h3>Input Parameters</h3>\n    <p>Select from the options below and click submit. A new page will open with an interactive visualization of the data with the parameters below</p>\n    <a href=\"#\" class=\"contact\">Submit </a>\n  </div>\n</main>\n"
+
+/***/ }),
+
+/***/ "./src/app/body/body.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/body/body.component.ts ***!
+  \****************************************/
+/*! exports provided: BodyComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BodyComponent", function() { return BodyComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var BodyComponent = /** @class */ (function () {
+    function BodyComponent() {
+    }
+    BodyComponent.prototype.ngOnInit = function () {
+    };
+    BodyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-body',
+            template: __webpack_require__(/*! ./body.component.html */ "./src/app/body/body.component.html"),
+            styles: [__webpack_require__(/*! ./body.component.css */ "./src/app/body/body.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], BodyComponent);
+    return BodyComponent;
 }());
 
 
@@ -147,7 +209,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n  <app-nav></app-nav>\n  <div class=\"tagline\">\n\n    <h1>Radiosonde <br/>  Automated research and visualization tool</h1>\n    <p>Scope 2018 - Southwestern University</p>\n    <div>\n        <a href=\"#\" class=\"contact\">Register</a>\n        <a href=\"#\" class=\"learn-more\">Learn More</a>\n    </div>\n\n  </div>\n\n <div class=\"overlay\"></div>\n</header>\n"
+module.exports = "<header>\n  <app-nav></app-nav>\n  <div class=\"tagline\">\n\n    <h1>Radiosonde <br/>  Automated research and visualization tool</h1>\n    <p>Scope 2018 - Southwestern University</p>\n    <div>\n        <a href=\"#\" class=\"contact\">Register</a>\n        <a href=\"#\" class=\"learn-more\">Learn More</a>\n    </div>\n\n  </div>\n <div class=\"overlay\"></div>\n</header>\n"
 
 /***/ }),
 
