@@ -97,6 +97,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
 /* harmony import */ var _nav_nav_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./nav/nav.component */ "./src/app/nav/nav.component.ts");
 /* harmony import */ var _body_body_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./body/body.component */ "./src/app/body/body.component.ts");
+/* harmony import */ var _scroll_directive__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./scroll.directive */ "./src/app/scroll.directive.ts");
+
 
 
 
@@ -117,7 +119,8 @@ var AppModule = /** @class */ (function () {
                 _person_person_component__WEBPACK_IMPORTED_MODULE_5__["PersonComponent"],
                 _header_header_component__WEBPACK_IMPORTED_MODULE_7__["HeaderComponent"],
                 _nav_nav_component__WEBPACK_IMPORTED_MODULE_8__["NavComponent"],
-                _body_body_component__WEBPACK_IMPORTED_MODULE_9__["BodyComponent"]
+                _body_body_component__WEBPACK_IMPORTED_MODULE_9__["BodyComponent"],
+                _scroll_directive__WEBPACK_IMPORTED_MODULE_10__["ScrollDirective"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -153,7 +156,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<main>\n  <div class=\"intro\">\n    <h1>About</h1>\n      <p>\n          For the summer of 2019, Dr. Edwards is researching how the change in climate has impacted the height of the tropopause. With the financial assistance of Southwestern's summer Scope program, this web application was built to automate the retrieval of radiosonde data for gulf states between Texas and Florida and produce various visualizations with the parameters supplied below. Our goal is to make upper atmosphere research accessible and easy for Dr. Edwards and anyone else looking for answer in this field.\n      </p>\n  </div>\n\n  <div class=\"multi-section\">\n    <img src=\"assets/balloon.jpeg\" />\n    <div>\n      <h3>Documentation</h3>\n      <p>Radiosondes are sent from multiple locations across the gulf twice a day by NOAA. The data the radiosondes have returned has been stored by NOAA. This web application has obtained its data from the University of Wyoming through a Python package, Siphon. The data has been stored on our own database for quick access. To determine the height of the tropopause we find the lowest temperature for each balloon and the height of the balloon at that temperature. </p>\n    </div>\n  </div>\n\n  <div class=\"multi-section-two\">\n      <img class=\"a\" src=\"assets/visuals.png\" />\n      <div class=\"b\">\n        <h3>Learn More</h3>\n        <p>If you are researching the upper atmosphere and would like to have your work visualized with data outside of what is currently being stored by this wep application, please contact us. </p>\n      </div>\n  </div>\n\n  <div>\n    <h3>Input Parameters</h3>\n    <p>Select from the options below and click submit. A new page will open with an interactive visualization of the data with the parameters below</p>\n    <a href=\"#\" class=\"contact\">Submit </a>\n  </div>\n</main>\n"
+module.exports = "<main>\n  <div id=\"about\" class=\"intro\">\n    <h1>About</h1>\n      <p>\n          For the summer of 2019, Dr. Edwards is researching how the change in climate has impacted the height of the tropopause. With the financial assistance of Southwestern's summer Scope program, this web application was built to automate the retrieval of radiosonde data for gulf states between Texas and Florida and produce various visualizations with the parameters supplied below. Our goal is to make upper atmosphere research accessible and easy for Dr. Edwards and anyone else looking for answer in this field.\n      </p>\n  </div>\n\n  <div id=\"document\" class=\"multi-section\">\n    <img src=\"assets/balloon.jpeg\" />\n    <div>\n      <h3>Documentation</h3>\n      <p>Radiosondes are sent from multiple locations across the gulf twice a day by NOAA. The data the radiosondes have returned has been stored by NOAA. This web application has obtained its data from the University of Wyoming through a Python package, Siphon. The data has been stored on our own database for quick access. To determine the height of the tropopause we find the lowest temperature for each balloon and the height of the balloon at that temperature. </p>\n    </div>\n  </div>\n\n  <div id=\"learn_more\" class=\"multi-section-two\">\n      <img class=\"a\" src=\"assets/visuals.png\" />\n      <div class=\"b\">\n        <h3>Learn More</h3>\n        <p>If you are researching the upper atmosphere and would like to have your work visualized with data outside of what is currently being stored by this wep application, please contact us. </p>\n      </div>\n  </div>\n\n  <div id=\"get_started\">\n    <h3>Input Parameters</h3>\n    <p>Select from the options below and click submit. A new page will open with an interactive visualization of the data with the parameters below</p>\n    <a href=\"#\" class=\"contact\">Submit </a>\n  </div>\n</main>\n"
 
 /***/ }),
 
@@ -169,6 +172,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BodyComponent", function() { return BodyComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _scroll_directive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scroll.directive */ "./src/app/scroll.directive.ts");
+
 
 
 var BodyComponent = /** @class */ (function () {
@@ -176,6 +181,10 @@ var BodyComponent = /** @class */ (function () {
     }
     BodyComponent.prototype.ngOnInit = function () {
     };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_scroll_directive__WEBPACK_IMPORTED_MODULE_2__["ScrollDirective"]),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _scroll_directive__WEBPACK_IMPORTED_MODULE_2__["ScrollDirective"])
+    ], BodyComponent.prototype, "scrollPlaceHolder", void 0);
     BodyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-body',
@@ -209,7 +218,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n  <app-nav></app-nav>\n  <div class=\"tagline\">\n\n    <h1>Radiosonde <br/>  Automated research and visualization tool</h1>\n    <p>Scope 2018 - Southwestern University</p>\n    <div>\n        <a href=\"#\" class=\"contact\">Register</a>\n        <a href=\"#\" class=\"learn-more\">Learn More</a>\n    </div>\n\n  </div>\n <div class=\"overlay\"></div>\n</header>\n"
+module.exports = "<header>\n  <app-nav></app-nav>\n  <div class=\"tagline\">\n\n    <h1>Radiosonde <br/>  Automated research and visualization tool</h1>\n    <a href=\"https://www.southwestern.edu/scope/\" target=\"_blank\" class=\"scope\">Scope 2019 Southwestern University </a>\n    <div>\n        <a (click)=\"scroll('get_started')\" class=\"learn-more\">Get Started</a>\n        <a (click)=\"scroll('learn_more')\" class=\"learn-more\">Learn More</a>\n    </div>\n\n  </div>\n <div class=\"overlay\"></div>\n</header>\n"
 
 /***/ }),
 
@@ -230,8 +239,15 @@ __webpack_require__.r(__webpack_exports__);
 var HeaderComponent = /** @class */ (function () {
     function HeaderComponent() {
     }
+    HeaderComponent.prototype.scroll = function (name) {
+        document.getElementById(name).scrollIntoView();
+    };
     HeaderComponent.prototype.ngOnInit = function () {
     };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('learn_more', { read: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"] }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], HeaderComponent.prototype, "placeholder", void 0);
     HeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-header',
@@ -265,7 +281,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav>\n  <ul>\n    <li><a href=\"#\">Produced By</a></li>\n  </ul>\n  <ul class=\"medium-nav\">\n      <li><a href=\"#\">Documentation</a></li>\n      <li><a href=\"#\">About</a></li>\n      <li><a href=\"#\">Register</a></li>\n\n    </ul>\n <ul>\n  <li><a href=\"#\">Login</a></li>\n </ul>\n</nav>\n"
+module.exports = "<nav>\n  <ul>\n    <li><a href=\"https://github.com/Daniel-Wh\" target=\"_blank\">Produced By</a></li>\n  </ul>\n  <ul class=\"medium-nav\">\n      <li><a (click)=\"scroll('document')\">Documentation</a></li>\n      <li><a (click)=\"scroll('about')\">About</a></li>\n      <li><a href=\"#\">Register</a></li>\n\n    </ul>\n <ul>\n  <li><a href=\"#\">Login</a></li>\n </ul>\n</nav>\n"
 
 /***/ }),
 
@@ -286,6 +302,9 @@ __webpack_require__.r(__webpack_exports__);
 var NavComponent = /** @class */ (function () {
     function NavComponent() {
     }
+    NavComponent.prototype.scroll = function (name) {
+        document.getElementById(name).scrollIntoView();
+    };
     NavComponent.prototype.ngOnInit = function () {
     };
     NavComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -354,6 +373,37 @@ var PersonComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], PersonComponent);
     return PersonComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/scroll.directive.ts":
+/*!*************************************!*\
+  !*** ./src/app/scroll.directive.ts ***!
+  \*************************************/
+/*! exports provided: ScrollDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScrollDirective", function() { return ScrollDirective; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var ScrollDirective = /** @class */ (function () {
+    function ScrollDirective(viewContainer) {
+        this.viewContainer = viewContainer;
+    }
+    ScrollDirective = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
+            selector: '[appScroll]'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"]])
+    ], ScrollDirective);
+    return ScrollDirective;
 }());
 
 
