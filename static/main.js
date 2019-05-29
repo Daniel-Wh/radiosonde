@@ -41,7 +41,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <app-header></app-header>\n  <app-body></app-body>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <app-header></app-header>\n  <app-body></app-body>\n  <app-footer></app-footer>\n</div>\n"
 
 /***/ }),
 
@@ -98,6 +98,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _nav_nav_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./nav/nav.component */ "./src/app/nav/nav.component.ts");
 /* harmony import */ var _body_body_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./body/body.component */ "./src/app/body/body.component.ts");
 /* harmony import */ var _scroll_directive__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./scroll.directive */ "./src/app/scroll.directive.ts");
+/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
+
 
 
 
@@ -120,7 +122,8 @@ var AppModule = /** @class */ (function () {
                 _header_header_component__WEBPACK_IMPORTED_MODULE_7__["HeaderComponent"],
                 _nav_nav_component__WEBPACK_IMPORTED_MODULE_8__["NavComponent"],
                 _body_body_component__WEBPACK_IMPORTED_MODULE_9__["BodyComponent"],
-                _scroll_directive__WEBPACK_IMPORTED_MODULE_10__["ScrollDirective"]
+                _scroll_directive__WEBPACK_IMPORTED_MODULE_10__["ScrollDirective"],
+                _footer_footer_component__WEBPACK_IMPORTED_MODULE_11__["FooterComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -194,6 +197,65 @@ var BodyComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], BodyComponent);
     return BodyComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/footer/footer.component.css":
+/*!*********************************************!*\
+  !*** ./src/app/footer/footer.component.css ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Zvb3Rlci9mb290ZXIuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/footer/footer.component.html":
+/*!**********************************************!*\
+  !*** ./src/app/footer/footer.component.html ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n<footer>\n        <ul>\n            <li><a href=\"#\">Register</a></li>\n            <li><a href=\"#\">Log in</a></li>\n        </ul>\n        <ul>\n            <li><a (click)=\"scroll('document')\">Documentation</a></li>\n            <li><a (click)=\"scroll('learn_more')\">Learn More</a></li>\n            <li><a (click)=\"scroll('about')\">About</a></li>\n            <li><a (click)=\"scroll('get_started')\">Get Started</a></li>\n         \n        </ul>\n        <ul>\n                <li><a href=\"https://www.facebook.com/SouthwesternUniversity/\"><i class=\"fab fa-facebook-f\"></i></a></li>\n                <li><a href=\"https://twitter.com/SouthwesternU\"><i class=\"fab fa-twitter\"></i></a></li>\n                <li><a href=\"https://www.instagram.com/southwesternu/\"><i class=\"fab fa-instagram\"></i></a></li>\n        </ul>\n\n</footer>\n"
+
+/***/ }),
+
+/***/ "./src/app/footer/footer.component.ts":
+/*!********************************************!*\
+  !*** ./src/app/footer/footer.component.ts ***!
+  \********************************************/
+/*! exports provided: FooterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FooterComponent", function() { return FooterComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var FooterComponent = /** @class */ (function () {
+    function FooterComponent() {
+    }
+    FooterComponent.prototype.scroll = function (name) {
+        document.getElementById(name).scrollIntoView();
+    };
+    FooterComponent.prototype.ngOnInit = function () {
+    };
+    FooterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-footer',
+            template: __webpack_require__(/*! ./footer.component.html */ "./src/app/footer/footer.component.html"),
+            styles: [__webpack_require__(/*! ./footer.component.css */ "./src/app/footer/footer.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], FooterComponent);
+    return FooterComponent;
 }());
 
 
