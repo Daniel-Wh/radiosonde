@@ -2,7 +2,7 @@ from datetime import datetime
 from flask import Flask
 from models.station_model import StationData, StationModel
 from db import db
-import pandas as pd
+# import pandas as pd
 import numpy as np
 
 
