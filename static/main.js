@@ -89,13 +89,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
-/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
-/* harmony import */ var _nav_nav_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./nav/nav.component */ "./src/app/nav/nav.component.ts");
-/* harmony import */ var _body_body_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./body/body.component */ "./src/app/body/body.component.ts");
-/* harmony import */ var _dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./dropdown/dropdown.component */ "./src/app/dropdown/dropdown.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
+/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
+/* harmony import */ var _nav_nav_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./nav/nav.component */ "./src/app/nav/nav.component.ts");
+/* harmony import */ var _body_body_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./body/body.component */ "./src/app/body/body.component.ts");
+/* harmony import */ var _dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./dropdown/dropdown.component */ "./src/app/dropdown/dropdown.component.ts");
+
 
 
 
@@ -109,20 +111,21 @@ var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                _footer_footer_component__WEBPACK_IMPORTED_MODULE_4__["FooterComponent"],
-                _header_header_component__WEBPACK_IMPORTED_MODULE_5__["HeaderComponent"],
-                _nav_nav_component__WEBPACK_IMPORTED_MODULE_6__["NavComponent"],
-                _body_body_component__WEBPACK_IMPORTED_MODULE_7__["BodyComponent"],
-                _dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_8__["DropdownComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
+                _footer_footer_component__WEBPACK_IMPORTED_MODULE_5__["FooterComponent"],
+                _header_header_component__WEBPACK_IMPORTED_MODULE_6__["HeaderComponent"],
+                _nav_nav_component__WEBPACK_IMPORTED_MODULE_7__["NavComponent"],
+                _body_body_component__WEBPACK_IMPORTED_MODULE_8__["BodyComponent"],
+                _dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_9__["DropdownComponent"]
             ],
             imports: [
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"]
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"]
             ],
             providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -206,7 +209,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <select>\n    <option class=\"contact\" *ngFor=\"let station of stations\" value=\"station\">{{station.name}}</option>\n  </select>\n  <select>\n    <option class=\"contact\" *ngFor=\"let season of seasons\" value=\"season\">{{season.name}}</option>\n  </select>\n  <select>\n    <option class=\"contact\" *ngFor=\"let item of oni\" value=\"item\">{{item.option}}</option>\n  </select>\n</div>"
+module.exports = "<div>\n  <select (change)=\"onSelectStation($event.target.value)\">\n    <option class=\"contact\" *ngFor=\"let station of stations\" value= {{station.id}}>{{station.name}}</option>\n  </select>\n  <select (change)=\"onSelectSeason($event.target.value)\">\n    <option class=\"contact\" *ngFor=\"let season of seasons\" value= {{season.id}}>{{season.name}}</option>\n  </select>\n  <select (change)=\"onSelectOni($event.target.value)\">\n    <option class=\"contact\" *ngFor=\"let item of oni\" value= {{item.id}}>{{item.option}}</option>\n  </select>\n</div>"
 
 /***/ }),
 
@@ -226,10 +229,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var DropdownComponent = /** @class */ (function () {
     function DropdownComponent() {
+        this.selected_station = 0;
+        this.selected_season = 0;
+        this.selected_oni = 0;
         this.stations = [
-            {
-                name: 'all stations', id: 0
-            },
+            { name: 'Select Station', id: 99 },
+            { name: 'All Stations', id: 0 },
             { name: 'Lake Charles', id: 1 },
             { name: 'El Paso', id: 2 },
             { name: 'Midland', id: 3 },
@@ -247,6 +252,7 @@ var DropdownComponent = /** @class */ (function () {
             { name: 'Brownsville', id: 15 }
         ];
         this.seasons = [
+            { name: 'Select Season', id: 99 },
             { name: 'all seasons', id: 100 },
             { name: 'Spring', id: 101 },
             { name: 'Summer', id: 102 },
@@ -254,12 +260,25 @@ var DropdownComponent = /** @class */ (function () {
             { name: 'Winter', id: 104 }
         ];
         this.oni = [
+            { option: 'Oceanic Nino Index', id: 99 },
             { option: 'No ONI specification', id: 200 },
             { option: 'El Nino', id: 201 },
             { option: 'La Nina', id: 202 },
             { option: 'Neutral', id: 203 }
         ];
     }
+    DropdownComponent.prototype.onSelectStation = function (station_id) {
+        this.selected_station = station_id;
+        console.log(this.selected_station);
+    };
+    DropdownComponent.prototype.onSelectSeason = function (season_id) {
+        this.selected_season = season_id;
+        console.log(this.selected_season);
+    };
+    DropdownComponent.prototype.onSelectOni = function (oni_id) {
+        this.selected_oni = oni_id;
+        console.log(this.selected_oni);
+    };
     DropdownComponent.prototype.ngOnInit = function () {
     };
     DropdownComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -515,7 +534,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Radiosonde UI\radiosonde-UI\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Radiosonde UI\radiosonde-ui\src\main.ts */"./src/main.ts");
 
 
 /***/ })
