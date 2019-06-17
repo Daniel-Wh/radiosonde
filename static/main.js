@@ -61,7 +61,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'radiosonde-UI';
+        this.title = 'Radiosonde';
     }
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -91,12 +91,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
-/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
-/* harmony import */ var _nav_nav_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./nav/nav.component */ "./src/app/nav/nav.component.ts");
-/* harmony import */ var _body_body_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./body/body.component */ "./src/app/body/body.component.ts");
-/* harmony import */ var _dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./dropdown/dropdown.component */ "./src/app/dropdown/dropdown.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
+/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
+/* harmony import */ var _nav_nav_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./nav/nav.component */ "./src/app/nav/nav.component.ts");
+/* harmony import */ var _body_body_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./body/body.component */ "./src/app/body/body.component.ts");
+/* harmony import */ var _dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./dropdown/dropdown.component */ "./src/app/dropdown/dropdown.component.ts");
+
 
 
 
@@ -113,19 +115,20 @@ var AppModule = /** @class */ (function () {
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-                _footer_footer_component__WEBPACK_IMPORTED_MODULE_5__["FooterComponent"],
-                _header_header_component__WEBPACK_IMPORTED_MODULE_6__["HeaderComponent"],
-                _nav_nav_component__WEBPACK_IMPORTED_MODULE_7__["NavComponent"],
-                _body_body_component__WEBPACK_IMPORTED_MODULE_8__["BodyComponent"],
-                _dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_9__["DropdownComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
+                _footer_footer_component__WEBPACK_IMPORTED_MODULE_6__["FooterComponent"],
+                _header_header_component__WEBPACK_IMPORTED_MODULE_7__["HeaderComponent"],
+                _nav_nav_component__WEBPACK_IMPORTED_MODULE_8__["NavComponent"],
+                _body_body_component__WEBPACK_IMPORTED_MODULE_9__["BodyComponent"],
+                _dropdown_dropdown_component__WEBPACK_IMPORTED_MODULE_10__["DropdownComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"]
+                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"]
             ],
             providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -153,7 +156,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<main>\n  <div id=\"about\" class=\"intro\">\n    <h1>About</h1>\n      <p>\n          For the summer of 2019, Dr. Edwards is researching how the change in climate has impacted the height of the tropopause. With the financial assistance of Southwestern's summer Scope program, this web application was built to automate the retrieval of radiosonde data for gulf states between Texas and Florida and produce various visualizations with the parameters supplied below. Our goal is to make upper atmosphere research accessible and easy for Dr. Edwards and anyone else looking for answer in this field.\n      </p>\n  </div>\n\n  <div id=\"document\" class=\"multi-section\">\n    <img src=\"assets/balloon.jpeg\" />\n    <div>\n      <h3>Documentation</h3>\n      <p>Radiosondes are sent from multiple locations across the gulf twice a day by NOAA. The data the radiosondes have returned has been stored by NOAA. This web application has obtained its data from the University of Wyoming through a Python package, Siphon. The data has been stored on our own database for quick access. To determine the height of the tropopause we find the lowest temperature for each balloon and the height of the balloon at that temperature. </p>\n    </div>\n  </div>\n\n  <div id=\"learn_more\" class=\"multi-section-two\">\n      <img class=\"a\" src=\"assets/visuals.png\" />\n      <div class=\"b\">\n        <h3>Learn More</h3>\n        <p>If you are researching the upper atmosphere and would like to have your work visualized with data outside of what is currently being stored by this wep application, please contact us. </p>\n      </div>\n  </div>\n\n  <div id=\"get_started\">\n    <h3>Input Parameters</h3>\n    <p>Select from the options below and click submit. A new page will open with an interactive visualization of the data with the parameters below</p>\n    <app-dropdown></app-dropdown>\n    <a href=\"#\" class=\"contact\">Submit </a>\n  </div>\n</main>\n"
+module.exports = "<main>\r\n  <div id=\"about\" class=\"intro\">\r\n    <h1>About</h1>\r\n      <p>\r\n          For the summer of 2019, Dr. Edwards is researching how the change in climate has impacted the height of the tropopause. With the financial assistance of Southwestern's summer Scope program, this web application was built to automate the retrieval of radiosonde data for gulf states between Texas and Florida and produce various visualizations with the parameters supplied below. Our goal is to make upper atmosphere research accessible and easy for Dr. Edwards and anyone else looking for answer in this field.\r\n      </p>\r\n  </div>\r\n\r\n  <div id=\"document\" class=\"multi-section\">\r\n    <img src=\"assets/balloon.jpeg\" />\r\n    <div>\r\n      <h3>Documentation</h3>\r\n      <p>Radiosondes are sent from multiple locations across the gulf twice a day by NOAA. The data the radiosondes have returned has been stored by NOAA. This web application has obtained its data from the University of Wyoming through a Python package, Siphon. The data has been stored on our own database for quick access. To determine the height of the tropopause we find the lowest temperature for each balloon and the height of the balloon at that temperature. </p>\r\n    </div>\r\n  </div>\r\n\r\n  <div id=\"learn_more\" class=\"multi-section-two\">\r\n      <img class=\"a\" src=\"assets/visuals.png\" />\r\n      <div class=\"b\">\r\n        <h3>Learn More</h3>\r\n        <p>If you are researching the upper atmosphere and would like to have your work visualized with data outside of what is currently being stored by this wep application, please contact us. </p>\r\n      </div>\r\n  </div>\r\n\r\n  <div id=\"get_started\">\r\n    <h3>Input Parameters</h3>\r\n    <p>Select from the options below and click submit. A new page will open with an interactive visualization of the data with the parameters below</p>\r\n    <app-dropdown (stationEvent)=\"receiveStation($event)\" (seasonEvent)=\"receiveSeason($event)\" (oniEvent)=\"receiveOni($event)\"></app-dropdown>\r\n    <a href=\"/vis\" target=\"blank\" class=\"contact\" (click)=\"onSubmit()\">Submit </a>\r\n  </div>\r\n</main>\r\n"
 
 /***/ }),
 
@@ -169,12 +172,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BodyComponent", function() { return BodyComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
 
 
 var BodyComponent = /** @class */ (function () {
-    function BodyComponent() {
+    function BodyComponent(http) {
+        this.http = http;
     }
+    BodyComponent.prototype.onSubmit = function () {
+        var body = JSON.stringify({ 'oni': this.oni, 'season': this.season, 'station': this.station });
+        var url = 'http://127.0.0.1:5000/vis';
+        var headers = { headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({ 'Content-Type': 'application/json' }) };
+        this.http.post(url, body, headers).subscribe(function (response) {
+            return console.log(response);
+        }, function (err) {
+            return console.log(err);
+        });
+        console.log();
+    };
+    BodyComponent.prototype.receiveStation = function ($event) {
+        this.station = $event;
+        console.log(this.station);
+    };
+    BodyComponent.prototype.receiveSeason = function ($event) {
+        this.season = $event;
+        console.log(this.season);
+    };
+    BodyComponent.prototype.receiveOni = function ($event) {
+        this.oni = $event;
+        console.log(this.oni);
+    };
     BodyComponent.prototype.ngOnInit = function () {
+    };
+    BodyComponent.prototype.ngAfterViewInit = function () {
     };
     BodyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -182,7 +213,7 @@ var BodyComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./body.component.html */ "./src/app/body/body.component.html"),
             styles: [__webpack_require__(/*! ./body.component.css */ "./src/app/body/body.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
     ], BodyComponent);
     return BodyComponent;
 }());
@@ -232,6 +263,9 @@ var DropdownComponent = /** @class */ (function () {
         this.selected_station = 0;
         this.selected_season = 0;
         this.selected_oni = 0;
+        this.stationEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.seasonEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.oniEvent = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.stations = [
             { name: 'Select Station', id: 99 },
             { name: 'All Stations', id: 0 },
@@ -269,18 +303,30 @@ var DropdownComponent = /** @class */ (function () {
     }
     DropdownComponent.prototype.onSelectStation = function (station_id) {
         this.selected_station = station_id;
-        console.log(this.selected_station);
+        this.stationEvent.emit(this.selected_station);
     };
     DropdownComponent.prototype.onSelectSeason = function (season_id) {
         this.selected_season = season_id;
-        console.log(this.selected_season);
+        this.seasonEvent.emit(this.selected_season);
     };
     DropdownComponent.prototype.onSelectOni = function (oni_id) {
         this.selected_oni = oni_id;
-        console.log(this.selected_oni);
+        this.oniEvent.emit(this.selected_oni);
     };
     DropdownComponent.prototype.ngOnInit = function () {
     };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"])
+    ], DropdownComponent.prototype, "stationEvent", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], DropdownComponent.prototype, "seasonEvent", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], DropdownComponent.prototype, "oniEvent", void 0);
     DropdownComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-dropdown',

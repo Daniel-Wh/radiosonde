@@ -1,8 +1,9 @@
 from flask import Flask, render_template
-from flask_restful import Api
+from flask_restful import Api, reqparse
 from flask_jwt import JWT, jwt_required
 from security import authenticate, identity
 from resources.user_resource import UserRegister
+from resources.vis_resource import Visual
 from models.station_model import StationData, StationModel
 from db import db
 
@@ -32,7 +33,13 @@ def home():
     return render_template('index.html')
 
 
-api.add_resource(UserRegister, '/register')  # allows users to register
+@app.route('/vis')
+def vis():
+    return render_template(Visual.render_to())
+
+
+api.add_resource(UserRegister, '/register')
+api.add_resource(Visual, '/vis')
 
 # if the app is called, run the app with debug=True
 if __name__ == '__main__':
