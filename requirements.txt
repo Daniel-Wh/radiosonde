@@ -1,7 +1,7 @@
 aniso8601==6.0.0
 bokeh==1.1.0
 Click==7.0
-Flask==1.0.3
+Flask==2.2.5
 Flask-JWT==0.3.2
 Flask-RESTful==0.3.7
 Flask-SQLAlchemy==2.4.0
